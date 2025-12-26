@@ -1,6 +1,5 @@
 # device_xiaomi_sm76xx-common
-TWRP Tree for the Redmi Note 14 Pro+ 5G
-The Xiaomi Redmi Note 14 Pro+ 5G (codenamed _"amethyst"_) is a smartphone from Xiaomi.
+TWRP Action builder
 
 ## Device specifications
 | Device       | Xiaomi Redmi Note 14 Pro+                              |
@@ -13,20 +12,6 @@ The Xiaomi Redmi Note 14 Pro+ 5G (codenamed _"amethyst"_) is a smartphone from X
 | Shipped Android version | Android 14 with HyperOS 1                        |
 | Battery      | Highly-removable Li-Ion 5110/6200mAh                        |
 | NFC         | Yes ( Market/region dependent )                            |
-
-## Building instructions
-```
-mkdir twrp && cd twrp
-repo init --depth=1 -u https://github.com/TWRP-Test/platform_manifest_twrp_aosp.git -b twrp-16.0
-repo sync
-git clone --depth=1 https://github.com/bluekyeet/device_xiaomi_sm76xx-common device/xiaomi/sm7635
-```
-
-```
-source build/envsetup.sh
-lunch twrp_sm7635-bp2a-eng
-make recoveryimage
-```
 
 ## Flashing instructions:
 ```
