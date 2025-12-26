@@ -7,6 +7,9 @@ on:
         type: choice
         description: Manifest Branch
         options:
+        - 16.0
+        - 14.1
+        - 13
         - 12.1
         - 11
         - 9.0
