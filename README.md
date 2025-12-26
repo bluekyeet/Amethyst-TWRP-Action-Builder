@@ -1,5 +1,4 @@
-# device_xiaomi_sm76xx-common
-TWRP Action builder
+# Amethyst TWRP Action builder
 
 ## Device specifications
 | Device       | Xiaomi Redmi Note 14 Pro+                              |
