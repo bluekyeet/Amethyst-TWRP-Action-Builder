@@ -14,23 +14,23 @@ on:
         - 7.1
         - 6.0
         required: true
-        default: 12.1
+        default: 16.0
       DEVICE_TREE_URL:
         description: Device Tree URL
         required: true
-        default: https://github.com/gawasvedraj/device_xiaomi_stone_twrp
+        default: https://github.com/bluekyeet/device_xiaomi_sm76xx-common
       DEVICE_TREE_BRANCH:
         description: Device Tree Branch
         required: true
-        default: master
+        default: twrp-16.0
       DEVICE_PATH:
         description: Path the device tree should be synced to, relative to source root
         required: true
-        default: device/xiaomi/stone
+        default: device/xiaomi/sm7635
       DEVICE_NAME:
         description: Device Name from tree (should match name on twrp_<DEVICE_NAME>.mk)
         required: true
-        default: stone
+        default: sm7635
       REPOPICK_PATCHES:
         description: (Optional) Gerrit commit numbers separated by a space to be included in the build (leave blank if not using)
         type: string
@@ -118,7 +118,7 @@ jobs:
         cd workspace
         git config --global user.name "${GITHUB_ACTOR}"
         git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
-        repo init --depth=1 -u https://github.com/gawasvedraj/platform_manifest_twrp_${{ steps.buildtree.outputs.value }}.git -b twrp-${{ inputs.MANIFEST_BRANCH }}
+        repo init --depth=1 -u https://github.com/TWRP-Test/platform_manifest_twrp_aosp.git -b twrp-${{ inputs.MANIFEST_BRANCH }}
           
     - name: Repo Sync
       run: |
