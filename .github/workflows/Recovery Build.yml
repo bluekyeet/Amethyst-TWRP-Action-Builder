@@ -7,15 +7,15 @@ on:
         type: choice
         description: Manifest Branch
         options:
-        - 16.0
-        - 14.1
-        - 13
-        - 12.1
-        - 11
-        - 9.0
-        - 8.1
-        - 7.1
-        - 6.0
+          - 16.0
+          - 14.1
+          - 13
+          - 12.1
+          - 11
+          - 9.0
+          - 8.1
+          - 7.1
+          - 6.0
         required: true
         default: 16.0
       DEVICE_TREE_URL:
@@ -27,31 +27,32 @@ on:
         required: true
         default: twrp-16.0
       DEVICE_PATH:
-        description: Path the device tree should be synced to, relative to source root
+        description: Path the device tree should be synced to
         required: true
         default: device/xiaomi/sm7635
       DEVICE_NAME:
-        description: Device Name from tree (should match name on twrp_<DEVICE_NAME>.mk)
+        description: Device Name
         required: true
         default: sm7635
       REPOPICK_PATCHES:
-        description: (Optional) Gerrit commit numbers separated by a space to be included in the build (leave blank if not using)
-        type: string
+        description: Optional patches
         required: false
       BUILD_TARGET:
         type: choice
         description: Partition containing recovery ramdisk
         options:
-        - boot
-        - recovery
-        - vendor_boot
+          - boot
+          - recovery
+          - vendor_boot
         required: true
         default: recovery
       RECOVERY_INSTALLER:
-        description: Include recovery installer zip
         type: boolean
         required: true
         default: true
+  schedule:
+    - cron: '0 */6 * * *'
+
 
 jobs:
   build:
